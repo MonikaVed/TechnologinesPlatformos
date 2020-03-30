@@ -1,0 +1,2 @@
+# TechnologinesPlatformos
+laboratoriniai darbai
