@@ -28,4 +28,6 @@ public class Subject implements Serializable
     private List<Painting> paintings = new ArrayList<>();
 
     public Subject() {}
+
+
 }
