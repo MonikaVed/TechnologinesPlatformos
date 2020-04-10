@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NamedQueries
@@ -28,6 +30,13 @@ public class Painting implements Serializable
     @ManyToOne
     @JoinColumn(name="AUTHOR_ID")
     private Author author;
+
+    @ManyToMany
+    @JoinTable(
+            name = "subjects_for_paintings",
+            joinColumns = @JoinColumn(name = "painting_id"),
+            inverseJoinColumns = @JoinColumn(name = "subject_id"))
+    private List<Subject> subjects = new ArrayList<>();
 
     @Version
     @Column(name = "OPT_LOCK_VERSION")
